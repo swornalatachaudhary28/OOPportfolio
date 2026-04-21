@@ -2,11 +2,11 @@
 11 marks  
 **to be committed to GitHub by 9th February**
 
-1 Hello World        -- todo  
-2 Test               -- todo  
-3 Personal Details   -- todo  
-4 Diamonds           -- todo  
-5 Questions         -- todo  
+1 Hello World        -- complete 
+2 Test               -- complete 
+3 Personal Details   -- complete 
+4 Diamonds           -- complete  
+5 Questions         -- complete 
 Please replace **todo** with **complete**  
 Record your progress on the OOP Form on README.md.  
 ---
@@ -26,7 +26,9 @@ public class Helloworld {
 }
 
 (2 marks)
----
+---output
+<img width="986" height="346" alt="image" src="https://github.com/user-attachments/assets/656b930f-c284-421e-9076-202b10a10c8b" />
+
 
 
 2 -\
@@ -44,7 +46,8 @@ public class Test {
 
 (2 marks)
 
----
+---output:
+
 
 
 3 -\
@@ -67,12 +70,12 @@ public class PersonalDetails {
 		int age = myObj.nextInt();
 		
 		System.out.println("Enter your phone number:");
-		int phonenumber = myObj.nextInt();
+		long phonenumber = myObj.nextLong();
 		
-		System.out.println("My name is "+ name);
-		System.out.println("I live in " + address);
-		System.out.println("I am " + age + " years old");
-		System.out.println("My contact number is" + phonenumber);
+		System.out.println("My name is "+ name + ".");
+		System.out.println("I live in " + address + ".");
+		System.out.println("I am " + age + " years old.");
+		System.out.println("My contact number is " + phonenumber + ".");
 		
 		
 		
@@ -85,7 +88,9 @@ public class PersonalDetails {
 
 (2 marks)
 
----
+--- Output:
+<img width="2086" height="361" alt="image" src="https://github.com/user-attachments/assets/74c33dcf-d9a4-4bc6-9527-68a22990ef67" />
+
 
 4 -\
 package weekone;
@@ -107,9 +112,21 @@ public class Diamondshape {
 
 (2 marks)
 
----
+---output :
+<img width="1078" height="376" alt="image" src="https://github.com/user-attachments/assets/cf89956d-3cdc-4bdf-bacf-3015745ddbd6" />
+
 
 5 -\
+a. What is the latest version of the Java SDK that is available?
+:- JDK 25
+b. What is the difference between Java SE and Java ME?
+:-Java SE is a foundational platform for developing desktop,console and server applications and includes core API where as Java ME is for resource constraint devices like Older mobile phones ,embedded systems having a limited specialized libraries.
+c. Which operating system is Java available for?
+:- for all windows, mac , linux , Arm.
+d. Give some other IDEs for Java apart from Eclipse nd IntelliJ?
+:-Netbeans, Visual Studio Code, Apache directory , eclipse theia etc.
+e. What is the main() function for in a Java program?
+:-It serves as an entry point for any java application.
 (3 marks)
 
 
