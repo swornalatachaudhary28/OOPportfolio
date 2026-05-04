@@ -46,7 +46,9 @@ public class Test {
 
 (2 marks)
 
----output:
+---output:<img width="845" height="436" alt="image" src="https://github.com/user-attachments/assets/cd6eb828-1f71-493b-84b7-5f93a576402a" />
+
+
 
 
 
