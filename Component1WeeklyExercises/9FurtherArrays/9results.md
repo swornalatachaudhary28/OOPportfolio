@@ -49,20 +49,183 @@ public static void main(String[] args) {
 ---output : <img width="685" height="495" alt="image" src="https://github.com/user-attachments/assets/3370b1b5-62be-481d-be9d-d0db7cefcfca" />
 
 
-2 -  
+2 - 
+package Week9;
+
+public class Accounts {
+	private String name;
+    private double balance;
+
+    public Accounts(String name, double initial) {
+        this.name = name;
+        this.balance = initial;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+
+    public boolean withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    public void addInterest() {
+        balance += (balance * 0.03);
+    }
+
+    public String toString() {
+        return String.format("Owner: %-10s Balance: £%.2f", name, balance);
+    }
+}
+package Week9;
+
+public class LLMbank {
+
+ 
+    public static void main(String[] args) {
+        Accounts[] accounts = new Accounts[30];
+        accounts[0] = new Accounts("Sworna", 1000.00);
+        accounts[1] = new Accounts("Samir", 500.00);
+
+        
+        accounts[0].deposit(200);
+        
+        
+        for (Accounts acc : accounts) {
+            if (acc != null) acc.addInterest();
+        }
+
+        System.out.println(accounts[0]);
+        System.out.println(accounts[1]);
+    }
+}
+
+
+
 (4 marks)
 
----
+---Output:<img width="566" height="202" alt="image" src="https://github.com/user-attachments/assets/dc840a88-7e0a-4a07-b9de-79930cbcbb8e" />
+
 
 3 -  
+package Week9;
+
+
+public class Person {
+	private String first, last, code;
+
+    public Person(String first, String last, String code) {
+        this.first = first;
+        this.last = last;
+        this.code = code;
+    }
+
+    public String toString() {
+        return String.format("%-12s %-12s %-8s", first, last, code);
+    }
+    
+}
+
+package Week9;
+import java.util.Scanner;
+public class PostCodeManager {
+	public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Person[] people = new Person[25];
+        int count = 0;
+
+        System.out.println("Enter First [Tab] Last [Tab] Code (or 'exit'):");
+        while (count < 25 && scan.hasNextLine()) {
+            String input = scan.nextLine();
+            if (input.equalsIgnoreCase("exit")) break;
+
+            String[] parts = input.split("\t");
+            if (parts.length == 3) {
+                people[count++] = new Person(parts[0], parts[1], parts[2]);
+            }
+        }
+
+        System.out.println("\nAddress List:");
+        for (int i = 0; i < count; i++) {
+            System.out.println(people[i]);
+        }
+        scan.close();
+    }
+}
+
+
 (4 marks)
 
----
+---output: <img width="802" height="180" alt="image" src="https://github.com/user-attachments/assets/f367c9dd-d966-4db9-9f2d-5f5806488ff6" />
+
 
 4 -  
+package Week9;
+
+public class Question {
+	private String text, answer;
+
+    public Question(String q, String a) {
+        text = q;
+        answer = a;
+    }
+
+    public String getText() { return text; }
+    public boolean isCorrect(String attempt) { return answer.equalsIgnoreCase(attempt); }
+
+}
+package Week9;
+import java.util.Scanner;
+public class Quiz {
+	private Question[] questions = new Question[25];
+    private int qCount = 0;
+
+    public void add(Question q) {
+        if (qCount < 25) questions[qCount++] = q;
+    }
+    public void giveQuiz() {
+        Scanner scan = new Scanner(System.in);
+        int correct = 0;
+
+        for (int i = 0; i < qCount; i++) {
+            System.out.println("Q" + (i+1) + ": " + questions[i].getText());
+            String response = scan.nextLine();
+            if (questions[i].isCorrect(response)) {
+                System.out.println("Correct!");
+                correct++;
+            } else {
+                System.out.println("Incorrect.");
+            }
+            
+        }
+        System.out.println("\nFinal Result: " + correct + "/" + qCount);
+        scan.close();
+    }
+    
+}
+
+package Week9;
+
+public class QuizTime {
+	public static void main(String[] args) {
+        Quiz myQuiz = new Quiz();
+        myQuiz.add(new Question("What is the capital of Nepal?", "Kathmandu"));
+        myQuiz.add(new Question("Does apple fall from the tree", "Yes"));
+        
+        myQuiz.giveQuiz();
+    }
+
+}
+
+
 (3 marks)
 
----
+---Output: <img width="540" height="271" alt="image" src="https://github.com/user-attachments/assets/c3078d9e-e773-4dd3-bd1d-3e291c6088e7" />
+
 
 
 
